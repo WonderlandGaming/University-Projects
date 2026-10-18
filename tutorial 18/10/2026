@@ -1,0 +1,72 @@
+18/10/2026
+
+Question one
+
+
+
+
+package javaapplication39.pkg00;
+
+import java.util.Scanner;
+
+public class JavaApplication3900 {
+
+    
+    public static double cylinderVolume(double dValue, double hValue) {
+        double radius = dValue / 2.0; 
+        double volume = Math.PI * Math.pow(radius, 2) * hValue; 
+        return volume;
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter the diameter of the cylinder: ");
+        double diameter = input.nextDouble();
+
+        System.out.print("Enter the height of the cylinder: ");
+        double height = input.nextDouble();
+
+        
+        double result = cylinderVolume(diameter, height);
+
+        System.out.println("The volume of the cylinder is: " + result);
+
+        input.close();
+    }
+}
+
+
+
+Question 2
+
+public class EmailApp {
+
+    // The required static method
+    public static String extractDomain(String email) {
+        // Step 1: Trim whitespace
+        email = email.trim();
+
+        // Step 2: Locate the '@' symbol
+        int atIndex = email.indexOf('@');
+        
+        // If '@' is missing, return "Invalid Email"
+        if (atIndex == -1) {
+            return "Invalid Email";
+        }
+
+        // Step 3: Extract everything after '@' and convert to lowercase
+        String domain = email.substring(atIndex + 1);
+        return domain.toLowerCase();
+    }
+
+    public static void main(String[] args) {
+        // Test case from your sheet
+        String testEmail = "  20252007@fue.edu  ";
+        
+        String result = extractDomain(testEmail);
+        
+        System.out.println("Input: \"" + testEmail + "\"");
+        System.out.println("Output: " + result);
+    }
+}
